@@ -1,0 +1,191 @@
+/* =========================================================
+   Site de orientação – estilos compartilhados
+   Fontes: Source Serif 4 (títulos) + IBM Plex Sans (corpo)
+   ========================================================= */
+:root{
+  --bg:#F5F6F2;
+  --card:#FFFFFF;
+  --line:#DDE2DA;
+  --ink:#1E2B27;
+  --ink-2:#3E4E48;
+  --ink-3:#4A5A54;
+  --muted:#55645E;
+  /* Verdes alinhados ao logo CannabisLegal (#09471D) */
+  --brand:#14612F;
+  --brand-dark:#09471D;
+  --soft:#E3EEE5;
+  --field:#B9C3BD;
+  --focus:#8FB3A5;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--brand)}a:hover{color:var(--brand-dark)}
+h1,h2,h3{color:var(--brand-dark);margin:0}
+h1,h2.serif,.serif{font-family:'Source Serif 4',Georgia,serif}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.narrow{max-width:780px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--brand);color:#fff;padding:8px 14px;border-radius:8px;z-index:50}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* ---------- Faixa de confiança ---------- */
+.trustbar{background:var(--brand-dark);color:#DCE6E0;font-size:13px}
+.trustbar .wrap{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:center;padding-top:8px;padding-bottom:8px}
+.trustbar span{display:inline-flex;align-items:center;gap:6px}
+
+/* ---------- Cabeçalho ---------- */
+header.site{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo img{height:34px;width:auto}
+@media (max-width:420px){.logo img{height:28px}}
+.foot-logo{height:30px;width:auto;align-self:flex-start}
+.logo-txt{display:flex;flex-direction:column;line-height:1.2}
+.logo-txt strong{font-family:'Source Serif 4',Georgia,serif;font-size:20px;font-weight:600;color:var(--brand-dark)}
+.logo-txt small{font-size:12px;color:var(--muted)}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;align-items:center}
+nav.main a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:8px;text-decoration:none;color:var(--brand);font-size:15px;font-weight:500}
+nav.main a:hover{background:var(--soft)}
+nav.main a[aria-current="page"]{background:var(--soft);color:var(--brand-dark)}
+nav.main a.cta{background:var(--brand);color:#fff}
+nav.main a.cta:hover{background:var(--brand-dark)}
+.menu-btn{display:none;min-height:44px;min-width:44px;border:1px solid var(--line);background:var(--card);border-radius:8px;color:var(--brand-dark);font:inherit;font-weight:500;padding:0 12px;cursor:pointer}
+@media (max-width:900px){
+  .menu-btn{display:inline-flex;align-items:center;gap:8px}
+  nav.main{position:absolute;left:0;right:0;top:100%;background:var(--card);border-bottom:1px solid var(--line);display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;align-items:stretch;padding:8px 16px 16px}
+  nav.main a{width:100%}
+}
+
+/* ---------- Tipografia de página ---------- */
+main{padding:56px 0 80px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+.display{font-size:clamp(34px,5.2vw,54px);line-height:1.1;font-weight:500;letter-spacing:-0.01em}
+.page-title{font-size:clamp(30px,4.2vw,44px);line-height:1.15;font-weight:500;letter-spacing:-0.01em}
+.lead{font-size:18px;color:var(--ink-2);max-width:640px}
+.section{margin-top:72px}
+.section-head{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.section-head h2{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(26px,3.2vw,34px);font-weight:500;line-height:1.2}
+.stack{display:flex;flex-direction:column;gap:20px}
+.small{font-size:14px;color:var(--muted)}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:8px;font:inherit;font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);color:#fff}
+.btn-ghost{background:transparent;color:var(--brand);border-color:var(--brand)}
+.btn-ghost:hover{background:var(--soft)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero-main{display:flex;flex-direction:column;gap:22px}
+.hero-photo{border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#DCE6DF,#C5D3C9);display:flex;align-items:flex-end;justify-content:flex-start;padding:18px;color:var(--ink-3);font-size:13px;border:1px solid var(--line)}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.hero-photo{aspect-ratio:16/10}}
+
+/* ---------- Cartões de intenção ---------- */
+.intents{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.intents{grid-template-columns:1fr}}
+.intent{display:flex;flex-direction:column;gap:8px;padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);text-decoration:none;color:inherit;transition:border-color .15s, transform .15s}
+.intent:hover{border-color:var(--brand);transform:translateY(-2px)}
+.intent strong{font-size:17px;color:var(--brand-dark)}
+.intent span{color:var(--ink-3);font-size:15px}
+.intent em{font-style:normal;color:var(--brand);font-weight:600;font-size:15px;margin-top:auto}
+
+/* ---------- Cartões e grades ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.card p{color:var(--ink-3)}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.icon{width:40px;height:40px;border-radius:10px;background:var(--soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.card ul{margin:0;padding-left:20px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+
+/* ---------- Passos ---------- */
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.steps li::before{counter-increment:s;content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--soft);color:var(--brand-dark);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:17px}
+.steps h3{font-size:18px;font-weight:600;margin-bottom:4px}
+.steps p{color:var(--ink-3)}
+.steps-inline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps-inline li{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:8px}
+.steps-inline li::before{counter-increment:s;content:"Etapa " counter(s);font-size:13px;font-weight:600;color:var(--brand);letter-spacing:.04em;text-transform:uppercase}
+.steps-inline h3{font-size:17px;font-weight:600}
+.steps-inline p{color:var(--ink-3);font-size:15px}
+@media (max-width:960px){.steps-inline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps-inline{grid-template-columns:1fr}}
+
+/* ---------- Faixas ---------- */
+.band{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:var(--soft);border-radius:var(--radius);padding:28px}
+.band p{font-size:18px;color:var(--brand-dark);font-weight:500}
+.notice{border-left:0;background:#FBF8EF;border:1px solid #E8DFC4;border-radius:var(--radius);padding:18px 20px;color:#5A4A1E;font-size:15px}
+
+/* ---------- Artigo (guia) ---------- */
+.article{display:grid;grid-template-columns:240px minmax(0,1fr);gap:48px;align-items:start}
+@media (max-width:900px){.article{grid-template-columns:1fr}}
+.toc{position:sticky;top:96px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;font-size:14px}
+.toc strong{display:block;margin-bottom:8px;color:var(--brand-dark)}
+.toc ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:900px){.toc{position:static}}
+.prose{display:flex;flex-direction:column;gap:18px;font-size:17px;color:var(--ink-2)}
+.prose h2{font-family:'Source Serif 4',Georgia,serif;font-size:28px;font-weight:500;margin-top:28px;scroll-margin-top:96px}
+.prose h3{font-size:19px;font-weight:600;margin-top:8px}
+.prose ul,.prose ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.meta{font-size:14px;color:var(--muted)}
+
+/* ---------- FAQ ---------- */
+.faq{display:flex;flex-direction:column;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:0}
+summary{cursor:pointer;font-weight:600;color:var(--brand-dark);font-size:17px;padding:20px 24px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;font-weight:400;color:var(--brand);flex-shrink:0}
+details[open] summary::after{content:"–"}
+details p{padding:0 24px 20px;color:var(--ink-3)}
+
+/* ---------- Formulário ---------- */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:48px;align-items:start}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+form{display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.field legend{font-weight:500;color:var(--ink)}
+.field .hint{font-size:13px;color:var(--muted)}
+.field input[type=text],.field input[type=tel],.field select,.field textarea{font:inherit;min-height:48px;padding:0 14px;border:1px solid var(--field);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+.field textarea{padding:12px 14px;resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand);outline:3px solid var(--focus);outline-offset:0}
+fieldset.field{border:0;padding:0;margin:0}
+.choices{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--field);border-radius:999px;background:#fff;cursor:pointer;font-size:15px}
+.choice input:checked + span{background:var(--brand);border-color:var(--brand);color:#fff}
+.choice input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:560px){.two{grid-template-columns:1fr}}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-3)}
+.consent input{width:20px;height:20px;margin-top:3px;flex-shrink:0;accent-color:var(--brand)}
+.hp{position:absolute;left:-5000px}
+.form-status{font-size:15px;color:#8A2C2C}
+.success{display:flex;flex-direction:column;gap:12px}
+.success h2{font-family:'Source Serif 4',Georgia,serif;font-size:28px;font-weight:500}
+[hidden]{display:none !important}
+
+/* ---------- Rodapé ---------- */
+footer.site{background:var(--brand-dark);color:#DCE6E0;font-size:14px}
+footer.site .wrap{padding-top:40px;padding-bottom:40px;display:grid;grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr));gap:32px}
+@media (max-width:760px){footer.site .wrap{grid-template-columns:1fr}}
+footer.site strong{color:#fff}
+footer.site a{color:#DCE6E0}
+footer.site a:hover{color:#fff}
+footer.site ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+footer.site .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;display:flex;flex-direction:column;gap:6px;color:#B9C8C0}
+
+/* ---------- WhatsApp flutuante ---------- */
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 18px 0 14px;border-radius:999px;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 6px 20px rgba(28,58,50,.25)}
+.wa:hover{background:var(--brand-dark);color:#fff}
+@media (max-width:560px){.wa span{display:none}.wa{padding:0 14px}}
